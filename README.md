@@ -36,4 +36,8 @@ The package contains a bunch to information. See [here](https://www.ncbi.nlm.nih
 
 1. Parallelize the downloading processes. 
 
+## Future work
+
+1. Genome annotation. This pipleline may be useful [(**LINK**)](https://github.com/ncbi/pgap/wiki).
+
 
