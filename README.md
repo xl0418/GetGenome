@@ -14,15 +14,23 @@ Basically, what this script does is:
 
 2. Generate folders for species and the corresponding hits;
 
-3. Run `datasets` to download the genome data package. The package contains a bunch to information. See [here](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-packages/genome/) for details. A fasta file is included in the package;
+3. Run `datasets` to download the genome data package. Make sure `datasets` is in the same folder as the `sh` script. 
+
+```
+sh getgenome.sh
+```
+
+The package contains a bunch to information. See [here](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-packages/genome/) for details. A fasta file is included in the package;
 
 4. Unzip the downloaded data. 
 
 ## Caveats
 
-1. This is just a sequencial process script. So, it may be super slow if you want to download a large set of genomes;
+1. Only tested on MacOS;
 
-2. This downloading may request a large space to store the data. 
+2. This is just a sequencial process script. So, it may be super slow if you want to download a large set of genomes;
+
+3. This downloading may request a large space to store the data. 
 
 ## To do list
 
