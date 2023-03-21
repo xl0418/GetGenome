@@ -31,10 +31,11 @@ export -f dl_data
 
 echo "FileReading Starts"
 
-inputfile="test.tsv"
+# The second argument specifies the input file
+inputfile=$2
 
-# parallel the download function
-cat $inputfile | parallel dl_data
+# parallel the download function with the first argument specifying number of cores
+cat $inputfile | parallel -j $1 dl_data
 
 echo "Done"
 

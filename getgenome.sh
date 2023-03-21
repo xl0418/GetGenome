@@ -28,8 +28,6 @@ do
     output="${genomeid}.zip"
     filedir="${str1}/${str2}/${output}"    
     
-    echo $output
-    echo $filedir
     # download data using datasets from ncbi
     ./datasets download genome accession $genomeid --filename $filedir
 
