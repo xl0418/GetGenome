@@ -23,7 +23,7 @@ dl_data(){
     # echo $output
     # echo $filedir
     # download data using datasets from ncbi
-    ./datasets download genome accession $genomeid --filename $filedir
+    ./datasets download genome accession $genomeid --include gff3,rna,cds,protein,genome,seq-report --filename $filedir
 
     unzip $filedir -d "${str1}/${str2}"
 }
