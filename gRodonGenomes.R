@@ -1,8 +1,8 @@
 #!/usr/bin/env Rscript
 
-library(gRodon)
-library(Biostrings)
-library(jsonlite)
+library(gRodon, quietly = T)
+library(Biostrings, quietly = T)
+library(jsonlite, quietly = T)
 # Load your *.ffn file into R
 
 args = commandArgs(trailingOnly = TRUE)[1]

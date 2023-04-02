@@ -9,6 +9,8 @@
 #SBATCH --mail-user=liangxu@caltech.edu   # email address
 
 module load parallel/20180222
+module load gcc/9.2.0
+module load R/4.2.2
 
 sh R_CDS.sh 16 genomeid.tsv
 
