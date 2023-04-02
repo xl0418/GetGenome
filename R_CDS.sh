@@ -11,6 +11,8 @@ CDS_data(){
 
     # generate CDS names
     sed -n '/##FASTA/q;p' $gff_file | awk '$3=="CDS"' | awk '{print $9'} | awk 'gsub(";.*","")' | awk 'gsub("ID=","")' > $prokkaooutput/$str2/$cds_file
+    sleep 1
+    Rscript gRodonGenomes.R $str2
 
 }
 export -f CDS_data
