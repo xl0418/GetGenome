@@ -49,7 +49,7 @@ The output files will be stored in "prokkaoutput" folder. The genome annotations
 
 ## Caveats
 
-1. Linux being tested. Running well on the Caltech cluster;
+1. Being tested on Linux. Running well on the Caltech cluster;
 
 
 ## Future work
