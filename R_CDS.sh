@@ -6,11 +6,11 @@ CDS_data(){
     prokkaoutput="prokkaooutput"
 
     # create folders to hold annotated genomes for $str2
-    gff_file="prokkaooutput/${str2}/${str2}.gff"
+    gff_file="${prokkaoutput}/${str2}/${str2}.gff"
     cds_file="${str2}_CDS_names.txt"
 
     # generate CDS names
-    sed -n '/##FASTA/q;p' $gff_file | awk '$3=="CDS"' | awk '{print $9'} | awk 'gsub(";.*","")' | awk 'gsub("ID=","")' > $prokkaooutput/$str2/$cds_file
+    sed -n '/##FASTA/q;p' $gff_file | awk '$3=="CDS"' | awk '{print $9'} | awk 'gsub(";.*","")' | awk 'gsub("ID=","")' > $prokkaoutput/$str2/$cds_file
     sleep 1
     Rscript gRodonGenomes.R $str2
 
