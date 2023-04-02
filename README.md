@@ -12,7 +12,7 @@
 
     `sbatch sub_prokkagenome.bash`
 
-    This command line will call `prokka_genomes.sh` on the input file `test.tsv` to annotate the genomes. The genome ids are the input arguments. 
+    This command line will call `prokka_genomes.sh` on the input file `test.tsv` to annotate the genomes. The genome ids are the input arguments. Note that the file `221201_P16N-S.prok-nonphoautototrophic.BLAST-95pcID-vs-GTDB-r207-allproks.tsv` is in the same format as the file `test.tsv`. The orginal data is not provided in this pipeline.
 
 3. Generate CDS name files and estimate max growth rates:
 
