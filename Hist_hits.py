@@ -22,3 +22,9 @@ unscaled = sns.histplot(data = df2, kde=False, ax = axes[0])
 scaled = sns.histplot(data = np.log2(df2), kde=False, ax = axes[1])
 fig.show()
 fig.savefig("Hits_distribution.png")
+
+
+# write an array to a tsv file
+with open("genomeid.tsv", "w") as f:
+    for i in range(len(df2)):
+        f.write(str(df2[i]) + "\n")
