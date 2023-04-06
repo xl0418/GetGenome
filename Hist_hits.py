@@ -10,8 +10,10 @@ hits_count = []
 total_hits = data.shape[0]
 
 total_species = len(data.iloc[:,0].unique())
+#
 df2 = data.pivot_table(index = [0], aggfunc ='size',
                fill_value=0)
+
 total_unique_genomes=len(data.iloc[:,1].unique())
 
 
@@ -27,6 +29,8 @@ fig.savefig("Hits_distribution.png")
 
 
 # write an array to a tsv file
+unique_genomeid = data.iloc[:,1].unique()
 with open("genomeid_full.tsv", "w") as f:
-    for i in range(len(df2)):
-        f.write(str(df2[i]) + "\n")
+    for i in range(len(unique_genomeid)):
+        # print(str(unique_genomeid[i]))
+        f.write(str(unique_genomeid[i] + "\n"))
