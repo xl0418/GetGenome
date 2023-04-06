@@ -28,3 +28,6 @@ TestResults.xml
 *.png
 *.zip
 genomeid.tsv
+221117-1910.P16N-S.16S.dna-sequences.tsv
+.RData
+.Rhistory

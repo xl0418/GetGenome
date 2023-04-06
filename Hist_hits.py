@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-filename = "221201_P16N-S.prok-nonphoautototrophic.BLAST-95pcID-vs-GTDB-r207-allproks.tsv"
+filename = "221117-1910.P16N-S.16S.dna-sequences.tsv"
 data=pd.read_csv(filename,sep='\t', header=None)
 
 hits_count = []
@@ -12,6 +12,8 @@ total_hits = data.shape[0]
 total_species = len(data.iloc[:,0].unique())
 df2 = data.pivot_table(index = [0], aggfunc ='size',
                fill_value=0)
+total_unique_genomes=len(data.iloc[:,1].unique())
+
 
 fig, axes = plt.subplots(1, 2)
 axes[0].set_title('Unscaled hits')
@@ -25,6 +27,6 @@ fig.savefig("Hits_distribution.png")
 
 
 # write an array to a tsv file
-with open("genomeid.tsv", "w") as f:
+with open("genomeid_full.tsv", "w") as f:
     for i in range(len(df2)):
         f.write(str(df2[i]) + "\n")
