@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-filename = "221117-1910.P16N-S.16S.dna-sequences.tsv"
+filename = "221201_P16N-S.prok-nonphoautototrophic.BLAST-95pcID-vs-GTDB-r207-allproks.tsv"
 data=pd.read_csv(filename,sep='\t', header=None)
 
 hits_count = []
