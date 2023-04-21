@@ -6,26 +6,26 @@ prokka_data(){
     ASVtag=${info[0]} # ASV tag, e.g. c497da3b39f30aceede6bec3b03cd100
     str2=${info[1]} # genome id, e.g. GB_GCA_905618805.1
 
-    extline="$(grep -m1 -i "$ASVtag" TaxInfo.tsv)"
+    extline="$(grep -m1 -i "$ASVtag" SPOT_Prokaryotic16S_ASV_Domain_identity.csv)"
 
     IFS=';' read -ra ADDR <<< "$extline"
-    kingdom="$(echo ${ADDR[0]} | cut -d' ' -f2)"
+    kingdom="$(echo ${ADDR[0]} | cut -d',' -f2)"
     # echo $kingdom
 
     # echo $str1 
     # echo $str2
-    prokkaoutput="prokkaP16NS"
+    prokkaoutput="prokkaSPOT"
 
     if [[ ! -e $prokkaoutput/$str2 ]]; then
         # create folders to hold annotated genomes for $str2
         # mkdir -p $prokkaoutput
         # read json file
-        json_file="GetGenome/genomes/${str2}/ncbi_dataset/data/dataset_catalog.json"
+        json_file="SPOT/genomes/${str2}/ncbi_dataset/data/dataset_catalog.json"
         
         # get the path to the genome file
         genome_file1=$(jq -r .assemblies[1].files[0].filePath ${json_file})
-        # e.g. /GetGenome/genomes/GB_GCA_902623215.1/ncbi_dataset/data/GCA_902623215.1/GCA_902623215.1_AG-893-M16_genomic.fna
-        genome_file2="GetGenome/genomes/${str2}/ncbi_dataset/data/${genome_file1}"
+        # e.g. /SPOT/genomes/GB_GCA_902623215.1/ncbi_dataset/data/GCA_902623215.1/GCA_902623215.1_AG-893-M16_genomic.fna
+        genome_file2="SPOT/genomes/${str2}/ncbi_dataset/data/${genome_file1}"
         
         # download data using datasets from ncbi
         if [[ $kingdom == *"Bacteria"* ]]; then
