@@ -1,0 +1,12 @@
+# count the number of subdirectories
+find . -mindepth 1 -type d | wc -l
+
+# remove the folder with all subdirectories #DANGER
+rm -rfv /central/groups/carnegie_poc/liangxu/prokkaP16NS/
+
+# match a string in a file and return the first match
+grep -m1 -i "$ASVtag" SPOT_Prokaryotic16S_ASV_Domain_identity.csv
+
+# read the line and cut by ',' and return the second item
+    IFS=';' read -ra ADDR <<< "$extline"
+    kingdom="$(echo ${ADDR[0]} | cut -d',' -f2)"
