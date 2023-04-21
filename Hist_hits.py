@@ -2,11 +2,11 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
+import multiprocess as mp
 
 filename = "221201_P16N-S.prok-nonphoautototrophic.BLAST-95pcID-vs-GTDB-r207-allproks.tsv"
 data=pd.read_csv(filename,sep='\t', header=None)
 
-hits_count = []
 total_hits = data.shape[0]
 
 total_species = len(data.iloc[:,0].unique())
