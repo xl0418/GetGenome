@@ -6,13 +6,13 @@
 
     `sbatch sub_getgenome.bash`
 
-    This command line calls `getgenome_parallel.sh` with the input file `test.tsv` to get full genomes sequences for all genome ids, e.g. GB_GCA_905618805.1 in `test.tsv` file.
+    This command line calls `getgenome_parallel.sh` with the input file `test.tsv` to get full genomes sequences for all genome ids, e.g. GB_GCA_905618805.1 in `test.tsv` file. `test.tsv` is the BALST output by comparing ASVs with the databases.
 
 2. Annotate genomes downloaded by Step 1:
 
     `sbatch sub_prokkagenome.bash`
 
-    This command line calls `prokka_genomes.sh` with the input file `test.tsv` to annotate the genomes. The genome ids are the input arguments. Note that the file `221201_P16N-S.prok-nonphoautototrophic.BLAST-95pcID-vs-GTDB-r207-allproks.tsv` is in the same format as the file `test.tsv`. The original data is not provided in this pipeline. Please replace the file with your own data.
+    This command line calls `prokka_genomes.sh` with the input file `test.tsv` to annotate the genomes. The genome ids are the input arguments. Note that the file `221201_P16N-S.prok-nonphoautototrophic.BLAST-95pcID-vs-GTDB-r207-allproks.tsv` is in the same format as the file `test.tsv`. The original data is not provided in this pipeline. Please replace the file with your own data. One additional file providing the information of `kingdom` is needed. This information tells `prokka` what taxonomy the genome is. The file name `SPOT_Prokaryotic16S_ASV_Domain_identity.csv` should be replaced with the users' file in prokka_genomes_SPOT.sh 
 
 3. Generate CDS name files and estimate max growth rates:
 
