@@ -36,7 +36,7 @@ echo "FileReading Starts"
 # The second argument specifies the input file
 inputfile=$2
 
-# parallel the download function with the first argument specifying number of cores
+# parallel the download function with the first argument $1 specifying number of cores
 cat $inputfile | parallel -j $1 dl_data
 
 echo "Done"
