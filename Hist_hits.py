@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import multiprocess as mp
 
-filename = "221201_P16N-S.prok-nonphoautototrophic.BLAST-95pcID-vs-GTDB-r207-allproks.tsv"
+filename = "SPOTdata/SPOT_Prokaryotic16S_ASV_dna-sequences_BLASToutput.tsv"
 data=pd.read_csv(filename,sep='\t', header=None)
 
 total_hits = data.shape[0]
@@ -28,9 +28,9 @@ fig.show()
 fig.savefig("Hits_distribution.png")
 
 
-# write an array to a tsv file
+# write an array to a tsv file to generate a list of unique genomeids
 unique_genomeid = data.iloc[:,1].unique()
-with open("genomeid_full.tsv", "w") as f:
+with open("SPOT_genomeid_full.tsv", "w") as f:
     for i in range(len(unique_genomeid)):
         # print(str(unique_genomeid[i]))
         f.write(str(unique_genomeid[i] + "\n"))
