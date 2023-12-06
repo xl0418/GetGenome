@@ -1,4 +1,4 @@
-# count the number of subdirectories
+# count the number of subdirectories https://www.baeldung.com/linux/count-directories
 find . -mindepth 1 -type d | wc -l
 
 # count the number of subdirectories only in the current directory not the nested subdirectories
